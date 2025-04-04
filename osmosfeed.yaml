@@ -9,3 +9,6 @@ sources:
   - href: https://css-tricks.com/feed/
   - href: https://www.smashingmagazine.com/feed/
   - href: https://www.freecodecamp.org/news/rss/
+  theme: jekyll-theme-minimal 
+  *@gloabal-owner1 @global-owner2
+  

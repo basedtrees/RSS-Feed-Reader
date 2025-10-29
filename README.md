@@ -1,6 +1,11 @@
 # About
 
-This is repository hosts the UI and content of an RSS feed reader.
+This repository hosts the UI and content of an RSS feed reader. The
+generated site is published via GitHub Pages at
+https://basedtrees.github.io/RSS-Feed-Reader/, where you can browse the
+latest aggregated articles. The raw cache that external tools can
+consume is mirrored at
+https://basedtrees.github.io/RSS-Feed-Reader/cache.json.
 
 ## Links and references
 
@@ -15,7 +20,7 @@ Use these shortcuts to jump directly to the key files in this repository when vi
 
 - [Main README](./README.md)
 - [Feed configuration](./osmosfeed.yaml)
-- [Cargo wrapper scripts](./package.json)
+- [Build script](./package.json)
 
 If you have already published the project to GitHub, you can also add deep links to common repository pages by replacing `YOUR-USERNAME` with your GitHub handle:
 

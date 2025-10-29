@@ -1,19 +1,12 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/osmosfeed.yaml b/osmosfeed.yaml
-index 9a6a70c78f928e36b148e13fe668beca7f1958fd..a4313682a10605457ddcf255b7e687812713b592 100644
---- a/osmosfeed.yaml
-+++ b/osmosfeed.yaml
-@@ -1,12 +1,12 @@
- #########################
  # Full reference
  # https://github.com/osmoscraft/osmosfeed/blob/master/docs/osmosfeed-yaml-reference.md
  #########################
  
- # cacheUrl: https://GITHUB_USERNAME.github.io/REPO_NAME/cache.json
+-# cacheUrl: https://GITHUB_USERNAME.github.io/REPO_NAME/cache.json
++cacheUrl: https://basedtrees.github.io/RSS-Feed-Reader/cache.json
  sources:
 +  - href: https://feeds.feedburner.com/zerohedge
    - href: https://github.com/osmoscraft/osmosfeed/releases.atom # Get new feature announcement via this feed
 -  - href: https://rss.nytimes.com/services/xml/rss/nyt/HomePage.xml
- ## RSS feed are either in .xml or rss page source format
 EOF
 )

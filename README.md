@@ -1,18 +1,14 @@
- (cd "$(git rev-parse --show-toplevel)" && git apply --3way <<'EOF' 
-diff --git a/README.md b/README.md
-index 167e45ada01900de2424afb5b45d10a726a564ee..717d32804743aea8ab249f9ddeb1b1848879e422 100644
---- a/README.md
-+++ b/README.md
-@@ -1,10 +1,47 @@
- # About
- 
--This is repository hosts the UI and content of an RSS feed reader.
 +This repository hosts the UI and content of an RSS feed reader. The
 +generated site is published via GitHub Pages at
 +https://basedtrees.github.io/RSS-Feed-Reader/, where you can browse the
 +latest aggregated articles. After the scheduled build workflow finishes,
 +the raw cache that external tools can consume is published alongside the
 +site at https://basedtrees.github.io/RSS-Feed-Reader/cache.json.
++
++> **Tip:** If the GitHub Pages site renders this README instead of the
++> dynamic feed UI, open the repository settings and set **GitHub Pages →
++> Branch** to `gh-pages`. The deployment workflow publishes the rendered
++> site there on every push to `main` and on the nightly schedule.
  
  ## Links and references
  
@@ -36,11 +32,13 @@ index 167e45ada01900de2424afb5b45d10a726a564ee..717d32804743aea8ab249f9ddeb1b184
 +  of the `public/` directory to the `gh-pages` branch. Make sure that
 +  branch is selected as the GitHub Pages source so the live site reflects
 +  the generated cache.
-+- `osmosfeed.yaml` intentionally leaves `cacheUrl` unset so the CLI falls
-+  back to an empty cache instead of trying to download the previously
-+  published JSON. That prevents `npm run build` from aborting with HTTP
-+  403 errors on networks that block access to
-+  `https://basedtrees.github.io/RSS-Feed-Reader/cache.json`.
++- During CI builds the CLI restores the previously published cache from
++  `https://basedtrees.github.io/RSS-Feed-Reader/cache.json` so the site
++  keeps serving articles even if a feed is temporarily offline.
++- When running the build locally on a network that blocks access to
++  GitHub Pages, invoke `npm run build:skip-cache` to disable the remote
++  cache restore step. This variant temporarily strips the `cacheUrl`
++  entry from `osmosfeed.yaml` before executing the CLI.
 +- The build still needs outbound access to the RSS sources listed in the
 +  config. If those requests are blocked locally, rely on the GitHub
 +  Actions workflow (which runs on GitHub’s infrastructure) to refresh the

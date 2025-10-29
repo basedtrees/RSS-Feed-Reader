@@ -1,6 +1,10 @@
 # About
 
-This is repository hosts the UI and content of an RSS feed reader.
+This repository hosts the UI and content of an RSS feed reader.
+
+## Bitcoin Client Research Notes
+
+This secondary project tracks research tasks for building a Bitcoin client. The first milestone is to understand how Bitcoin enforces time-based rules. See [`docs/time-signatures.md`](docs/time-signatures.md) for an overview of block timestamps, locktimes, and relative timelocks, along with a vector data-flow diagram of the thin client interacting with the Bitcoin Core blockchain.
 
 ## Links and references
 
